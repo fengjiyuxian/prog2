@@ -89,28 +89,28 @@ function loadTriangles() {
                 // console.log(inputTriangles[whichSet].vertices[whichSetVert]);
             }
             
-            // set up the triangle index array, adjusting indices across sets
-            for (whichSetTri=0; whichSetTri<inputTriangles[whichSet].triangles.length; whichSetTri++) {
-                vec3.add(triToAdd,indexOffset,inputTriangles[whichSet].triangles[whichSetTri]);
-                indexArray.push(triToAdd[0],triToAdd[1],triToAdd[2]);
-            } // end for triangles in set
+//             // set up the triangle index array, adjusting indices across sets
+//             for (whichSetTri=0; whichSetTri<inputTriangles[whichSet].triangles.length; whichSetTri++) {
+//                 vec3.add(triToAdd,indexOffset,inputTriangles[whichSet].triangles[whichSetTri]);
+//                 indexArray.push(triToAdd[0],triToAdd[1],triToAdd[2]);
+//             } // end for triangles in set
 
-            vtxBufferSize += inputTriangles[whichSet].vertices.length; // total number of vertices
-            triBufferSize += inputTriangles[whichSet].triangles.length; // total number of tris
+//             vtxBufferSize += inputTriangles[whichSet].vertices.length; // total number of vertices
+//             triBufferSize += inputTriangles[whichSet].triangles.length; // total number of tris
         } // end for each triangle set 
         // console.log(coordArray.length);
         
-        triBufferSize *= 3; // now total number of indices
+//         triBufferSize *= 3; // now total number of indices
 
         // send the vertex coords to webGL
         vertexBuffer = gl.createBuffer(); // init empty vertex coord buffer
         gl.bindBuffer(gl.ARRAY_BUFFER,vertexBuffer); // activate that buffer
         gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(coordArray),gl.STATIC_DRAW); // coords to that buffer
         
-        // send the triangle indices to webGL
-        triangleBuffer = gl.createBuffer(); // init empty triangle index buffer
-        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, triangleBuffer); // activate that buffer
-        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(indexArray),gl.STATIC_DRAW); // indices to that buffer
+//         // send the triangle indices to webGL
+//         triangleBuffer = gl.createBuffer(); // init empty triangle index buffer
+//         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, triangleBuffer); // activate that buffer
+//         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(indexArray),gl.STATIC_DRAW); // indices to that buffer
         
     } // end if triangles found
 } // end load triangles
