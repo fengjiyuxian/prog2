@@ -181,7 +181,15 @@ function renderTriangles() {
     gl.bindBuffer(gl.ARRAY_BUFFER,vertexBuffer); // activate
     gl.vertexAttribPointer(vertexPositionAttrib,3,gl.FLOAT,false,0,0); // feed
 
-    gl.drawArrays(gl.TRIANGLES,0,3); // render
+    gl.drawArrays(gl.TRIANGLES,0,6); // render
+    
+//     // vertex buffer: activate and feed into vertex shader
+//     gl.bindBuffer(gl.ARRAY_BUFFER,vertexBuffer); // activate
+//     gl.vertexAttribPointer(vertexPositionAttrib,3,gl.FLOAT,false,0,0); // feed
+
+//     // triangle buffer: activate and render
+//     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,triangleBuffer); // activate
+//     gl.drawElements(gl.TRIANGLES,triBufferSize,gl.UNSIGNED_SHORT,0); // render
 } // end render triangles
 
 
