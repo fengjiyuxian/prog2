@@ -181,7 +181,7 @@ function renderTriangles() {
     gl.bindBuffer(gl.ARRAY_BUFFER,vertexBuffer); // activate
     gl.vertexAttribPointer(vertexPositionAttrib,3,gl.FLOAT,false,0,0); // feed
 
-    gl.drawArrays(gl.TRIANGLES,0,triBufferSize); // render
+    gl.drawArrays(gl.TRIANGLES,0,9); // render
     
 } // end render triangles
 
